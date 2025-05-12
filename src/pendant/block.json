@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/pendant",
+	"version": "0.1.0",
+	"title": "Pendant",
+	"category": "snd-blocks-other",
+	"icon": "align-wide",
+	"example": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Каждый член клуба становится обладателем кулона в виде бабочки, неотъемлемого символа нашего бренда"
+		},
+		"description": {
+			"type": "string",
+			"default": "Элегантное украшение, которое объединяет всех участников Bohicare Privilege Club"
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

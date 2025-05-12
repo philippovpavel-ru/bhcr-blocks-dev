@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/technologies",
+	"version": "0.1.0",
+	"title": "Technologies",
+	"category": "snd-blocks-product",
+	"icon": "index-card",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Особенность"
+		},
+		"description": {
+			"type": "string",
+			"default": "Здесь что-то общее про подход к технологиям"
+		},
+		"subtitle": {
+			"type": "string",
+			"default": "Water Holding System&nbsp;&mdash; многоуровневая система удержания воды"
+		},
+		"text_technologies": {
+			"type": "string",
+			"default": "Благодаря этой технологии, увлажняющие ингредиенты наиболее эффективно проникают в клетки кожи, наполняя их необходимым количеством влаги."
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		},
+		"mirror": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

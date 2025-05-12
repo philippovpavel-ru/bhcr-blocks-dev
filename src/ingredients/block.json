@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/ingredients",
+	"version": "0.1.0",
+	"title": "Ingredients",
+	"category": "snd-blocks-product",
+	"icon": "editor-insertmore",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "ИНГРЕДИЕНТЫ"
+		},
+		"description": {
+			"type": "string",
+			"default": "Компоненты, которые делают это средство особенным"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"title": "Весь состав",
+				"url": "",
+				"show": true,
+				"target": true
+			}
+		}
+		
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

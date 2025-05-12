@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/technology-img",
+  "version": "0.1.0",
+  "title": "Technology img",
+  "category": "snd-blocks-other",
+  "icon": "format-image",
+  "example": {},
+  "parent": [
+    "snd/technologies"
+  ],
+  "attributes": {
+    "anchor": {
+      "type": "string"
+    },
+    "images": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": false,
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

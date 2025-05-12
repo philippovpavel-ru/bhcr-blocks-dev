@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/love-link-block",
+  "version": "0.1.0",
+  "title": "Love link block",
+  "category": "snd-blocks-other",
+  "icon": "admin-links",
+  "parent": [
+    "snd/love"
+  ],
+  "attributes": {
+    "link": {
+      "type": "object",
+      "default": {
+        "show": true,
+        "title": "Купить",
+        "url": "",
+        "target": false
+      }
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "show": true,
+        "id": 0,
+        "url": "",
+        "alt": ""
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

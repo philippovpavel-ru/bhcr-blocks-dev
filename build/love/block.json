@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/love",
+  "version": "0.1.0",
+  "title": "Love",
+  "category": "snd-blocks-frontpage",
+  "icon": "carrot",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "default"
+    },
+    "mirror": {
+      "type": "boolean",
+      "default": false
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": ""
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

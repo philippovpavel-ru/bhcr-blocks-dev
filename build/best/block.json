@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/best",
+  "version": "0.1.0",
+  "title": "Best",
+  "category": "snd-blocks-frontpage",
+  "icon": "thumbs-up",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "hideCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "isProduct": {
+      "type": "boolean",
+      "default": false
+    },
+    "count": {
+      "type": "number",
+      "default": 0
+    },
+    "title": {
+      "type": "string",
+      "default": "Мы собрали лучшее"
+    },
+    "description": {
+      "type": "string",
+      "default": "Откройте для себя всё: от бестселлеров до новинок"
+    },
+    "link": {
+      "type": "object",
+      "default": {
+        "show": true,
+        "title": "Купить лучшее",
+        "url": "",
+        "target": false
+      }
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

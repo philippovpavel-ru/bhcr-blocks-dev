@@ -1,0 +1,189 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/steps",
+  "version": "0.1.0",
+  "title": "Steps",
+  "category": "snd-blocks-frontpage",
+  "icon": "editor-ol",
+  "example": {},
+  "attributes": {
+    "instanceId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "default": "PRO-AGE LINE"
+    },
+    "description": {
+      "type": "string",
+      "default": "5&nbsp;простых шагов для сияющей и&nbsp;здоровой кожи лица"
+    },
+    "instruction": {
+      "type": "string",
+      "default": "Нажмите на номер, чтобы посмотреть всю линейку"
+    },
+    "link": {
+      "type": "object",
+      "default": {
+        "show": true,
+        "title": "Купить линейку",
+        "url": "",
+        "target": false
+      }
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": ""
+      }
+    },
+    "steps": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Пенка для умывания",
+          "description": "Очищение / Восстановление / Увлажнение",
+          "position": {
+            "desktop": {
+              "top": 57,
+              "right": 23
+            },
+            "tablet": {
+              "active": true,
+              "width": 424,
+              "top": 57,
+              "right": 11
+            },
+            "mobile": {
+              "active": true,
+              "width": 374,
+              "top": 57,
+              "right": 5
+            }
+          }
+        },
+        {
+          "title": "Тоник для лица",
+          "description": "Увлажнение / Выравнивание / Тонизирование",
+          "position": {
+            "desktop": {
+              "top": 22,
+              "right": 42
+            },
+            "tablet": {
+              "active": false,
+              "width": 767,
+              "top": 22,
+              "right": 42
+            },
+            "mobile": {
+              "active": false,
+              "width": 374,
+              "top": 22,
+              "right": 42
+            }
+          }
+        },
+        {
+          "title": "Сыворотка",
+          "description": "Увлажнение / Выравнивание / Тонизирование",
+          "position": {
+            "desktop": {
+              "top": 49,
+              "right": 61
+            },
+            "tablet": {
+              "active": false,
+              "width": 767,
+              "top": 49,
+              "right": 61
+            },
+            "mobile": {
+              "active": false,
+              "width": 374,
+              "top": 49,
+              "right": 61
+            }
+          }
+        },
+        {
+          "title": "Лифтинг крем для глаз",
+          "description": "Увлажнение / Выравнивание / Тонизирование",
+          "position": {
+            "desktop": {
+              "top": 35,
+              "right": 66
+            },
+            "tablet": {
+              "active": false,
+              "width": 767,
+              "top": 35,
+              "right": 61
+            },
+            "mobile": {
+              "active": true,
+              "width": 424,
+              "top": 35,
+              "right": 74
+            }
+          }
+        },
+        {
+          "title": "Лифтинг крем для лица",
+          "description": "Увлажнение / Выравнивание / Тонизирование",
+          "position": {
+            "desktop": {
+              "top": 73,
+              "right": 50
+            },
+            "tablet": {
+              "active": true,
+              "width": 991,
+              "top": 82,
+              "right": 50
+            },
+            "mobile": {
+              "active": true,
+              "width": 767,
+              "top": 73,
+              "right": 50
+            }
+          }
+        },
+        {
+          "title": "Коллагеновая лифтинг-маска",
+          "description": "Увлажнение / Выравнивание / Тонизирование",
+          "position": {
+            "desktop": {
+              "top": 24,
+              "right": 35
+            },
+            "tablet": {
+              "active": false,
+              "width": 767,
+              "top": 24,
+              "right": 35
+            },
+            "mobile": {
+              "active": false,
+              "width": 374,
+              "top": 24,
+              "right": 35
+            }
+          }
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

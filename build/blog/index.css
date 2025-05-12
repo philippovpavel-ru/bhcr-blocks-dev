@@ -1,0 +1,1 @@
+.sd-blog__grid--inner{display:block!important}.sd-blog__grid--inner .block-editor-block-list__layout{display:grid;grid-template-columns:repeat(3,1fr);grid-column-gap:15px;grid-row-gap:45px;width:100%}@media(max-width:767px){.sd-blog__grid--inner .block-editor-block-list__layout{grid-template-columns:repeat(1,1fr)}}

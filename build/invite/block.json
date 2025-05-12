@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/invite",
+  "version": "0.1.0",
+  "title": "Invite",
+  "category": "snd-blocks-other",
+  "icon": "editor-table",
+  "example": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Приглашаем истинных ценителей премиальной корейской косметики присоединиться к Bohicare Privilege Club"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Bohicare Privilege Club"
+    },
+    "description_01": {
+      "type": "string",
+      "default": "Это престижный клуб привилегий, созданный для проявления признательности нашим покупателям. Bohicare искренне благодарен тем, кто выбирает наш бренд, делая его неотъемлемой частью своего ежедневного ухода."
+    },
+    "description_02": {
+      "type": "string",
+      "default": "Все участники клуба получают доступ к роскошным подаркам, эксклюзивным предложениям, а также приглашениям на уникальные мероприятия бренда, которые планирует проводить компания."
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

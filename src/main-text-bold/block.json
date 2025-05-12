@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/main-text-bold",
+	"version": "0.1.0",
+	"title": "Main text bold",
+	"category": "snd-blocks-other",
+	"icon": "editor-bold",
+	"example": {},
+	"parent": ["snd/main"],
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Уважаемый партнер, благодарим вас за проявленный интерес к Bohicare."
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"className": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

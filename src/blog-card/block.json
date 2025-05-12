@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/blog-card",
+	"version": "0.1.0",
+	"title": "Blog Card",
+	"category": "snd-blocks-other",
+	"icon": "admin-page",
+	"example": {},
+	"parent": ["snd/blog"],
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "журнал & новости"
+		},
+		"description": {
+			"type": "string",
+			"default": "В журнале мы рассказываем о новых продуктах, актуальных предложениях, делимся бьюти лайфхаками, статьями о ... тут нужно дополнить"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"show": true,
+				"title": "Читать",
+				"url": "",
+				"target": false
+			}
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

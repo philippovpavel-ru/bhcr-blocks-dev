@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/way",
+  "version": "0.1.0",
+  "title": "Way",
+  "category": "snd-blocks-product",
+  "icon": "editor-ol-rtl",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "mirror": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "type": "string",
+      "default": "Способ применения"
+    },
+    "description": {
+      "type": "string",
+      "default": "Тоник идеально подходит для подготовки кожи к следующим этапам ухода"
+    },
+    "stepPrefix": {
+      "type": "string",
+      "default": "Шаг"
+    },
+    "image": {
+      "type": "object",
+      "default": {
+        "id": 0,
+        "url": "",
+        "alt": ""
+      }
+    },
+    "steps": {
+      "type": "array",
+      "default": [
+        "Достаньте тонер-эссенцию из коробки и аккуратно снимите колпачок",
+        "Наберите достаточное количество средства на руки",
+        "Равномерно распределите его по массажным линиям лица и шеи",
+        "Пройдитесь по лицу легкими похлопывающими движениями подушечек пальцев, чтобы помочь средству лучше впитаться",
+        "После того как средство впитается, переходите к следующему этапу ухода"
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

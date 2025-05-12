@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/you",
+	"version": "0.1.0",
+	"title": "You",
+	"category": "snd-blocks-frontpage",
+	"icon": "images-alt",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "ВЫ + BOHICARE"
+		},
+		"description": {
+			"type": "string",
+			"default": "Снимайте, делитесь и вдохновляйте, отмечая @bohicare #bohicare"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"show": true,
+				"title": "Подписаться",
+				"url": "",
+				"target": false
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

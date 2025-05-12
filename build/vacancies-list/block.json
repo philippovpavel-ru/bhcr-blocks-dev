@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/vacancies-list",
+  "version": "0.1.0",
+  "title": "Vacancies list",
+  "category": "snd-blocks-other",
+  "icon": "businessman",
+  "example": {
+    "viewportWidth": 1200
+  },
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "default"
+    },
+    "title": {
+      "type": "string",
+      "default": "В Bohicare мы прислушиваемся к мнению каждого, ценим вовлеченность, командную работу, взаимовыручку и работу на результат"
+    },
+    "listBoxTitle": {
+      "type": "string",
+      "default": "Открытые позиции"
+    },
+    "listBoxSubtitle": {
+      "type": "string",
+      "default": "Чтобы стать участником Bohicare Privilege Club"
+    },
+    "vacancies": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Бренд-амбасадор",
+          "description": "Полная занятость / Весь мир",
+          "url": "#",
+          "target": false
+        },
+        {
+          "title": "Контент-креатор",
+          "description": "Частичная занятость / Сеул",
+          "url": "#",
+          "target": false
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "anchor": true,
+    "align": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

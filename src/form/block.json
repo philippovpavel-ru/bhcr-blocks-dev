@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/form",
+	"version": "0.1.0",
+	"title": "Form",
+	"category": "snd-blocks-other",
+	"icon": "editor-table",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"anchor": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string",
+			"default": "Мы открыты к диалогу и готовы ответить на все ваши вопросы"
+		},
+		"description": {
+			"type": "string",
+			"default": "Есть вопрос, идея или предложение о сотрудничестве? Пожалуйста, свяжитесь с нами!"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/market",
+	"version": "0.1.0",
+	"title": "Market",
+	"category": "snd-blocks-other",
+	"icon": "editor-insertmore",
+	"example": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Так же Bohicare можно купить на маркетплейсах"
+		},
+		"images": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

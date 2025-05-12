@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/you-product-card",
+	"version": "0.1.0",
+	"title": "You product card",
+	"category": "snd-blocks-other",
+	"icon": "format-image",
+	"example": {},
+	"parent": ["snd/you"],
+	"attributes": {
+		"anchor": {
+			"type": "string"
+		},
+		"product": {
+			"type": "object"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"show": true,
+				"title": "@profile",
+				"url": "https://instagram.com",
+				"target": true
+			}
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

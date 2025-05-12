@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snd/main-contact-info",
+  "version": "0.1.0",
+  "title": "Main contact info",
+  "category": "snd-blocks-other",
+  "icon": "info",
+  "parent": [
+    "snd/main"
+  ],
+  "attributes": {
+    "list": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Общая",
+          "link": {
+            "title": "info@bohicare.com",
+            "url": "mailto:info@bohicare.com",
+            "target": false
+          }
+        },
+        {
+          "title": "PR & Сотрудничество",
+          "link": {
+            "title": "pr@bohicare.com",
+            "url": "mailto:pr@bohicare.com",
+            "target": false
+          }
+        },
+        {
+          "title": "Служба заботы",
+          "link": {
+            "title": "orders@bohicare.com",
+            "url": "mailto:orders@bohicare.com",
+            "target": false
+          }
+        },
+        {
+          "title": "Телеграм",
+          "link": {
+            "title": "bohicare_bot",
+            "url": "https://t.me/",
+            "target": true
+          }
+        },
+        {
+          "title": "Сайт",
+          "link": {
+            "title": "bohicare.com",
+            "url": "https://bohicare.com/",
+            "target": false
+          }
+        },
+        {
+          "title": "Соцсети",
+          "link": {
+            "title": "@bohicare",
+            "url": "https://t.me/",
+            "target": true
+          }
+        },
+        {
+          "title": "Адрес",
+          "link": {
+            "title": "Seoul, Gangseo-gu, Magok-dong 774-9 Scienstar Room 1220",
+            "url": "#",
+            "target": false
+          }
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": false,
+    "anchor": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

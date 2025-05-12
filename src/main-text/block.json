@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/main-text",
+	"version": "0.1.0",
+	"title": "Main text",
+	"category": "snd-blocks-other",
+	"icon": "editor-textcolor",
+	"example": {},
+	"parent": ["snd/main"],
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Наша компания быстро растёт. Мы всегда открыты для сотрудничества, новых проектов и совместной работы..."
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false,
+		"className": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/main",
+	"version": "0.1.0",
+	"title": "Main",
+	"category": "snd-blocks-other",
+	"icon": "welcome-view-site",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"anchor": {
+			"type": "string"
+		},
+		"mobHeader": {
+			"type": "boolean",
+			"default": true
+		},
+		"mirror": {
+			"type": "boolean",
+			"default": false
+		},
+		"type": {
+			"type": "string",
+			"default": "default"
+		},
+		"title": {
+			"type": "string",
+			"default": "Связаться с&nbsp;нами"
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

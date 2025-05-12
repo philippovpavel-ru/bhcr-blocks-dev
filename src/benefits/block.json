@@ -1,0 +1,68 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/benefits",
+	"version": "0.1.0",
+	"title": "Benefits",
+	"category": "snd-blocks-product",
+	"icon": "yes-alt",
+	"example": {
+		"viewportWidth": 1200
+	},
+	"attributes": {
+		"mirror": {
+			"type": "boolean",
+			"default": false
+		},
+		"title": {
+			"type": "string",
+			"default": "Преимущества"
+		},
+		"image": {
+			"type": "object",
+			"default": {
+				"id": 0,
+				"url": "",
+				"alt": ""
+			}
+		},
+		"links": {
+			"type": "array",
+			"default": [
+				{
+					"title": "Действие",
+					"url": "#",
+					"target": false
+				},
+				{
+					"title": "Ингредиенты",
+					"url": "#",
+					"target": false
+				},
+				{
+					"title": "Технологии",
+					"url": "#",
+					"target": false
+				},
+				{
+					"title": "Способ применения",
+					"url": "#",
+					"target": false
+				},
+				{
+					"title": "Отзывы",
+					"url": "#",
+					"target": false
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

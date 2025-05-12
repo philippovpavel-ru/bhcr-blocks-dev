@@ -1,0 +1,15 @@
+.sd-blog__grid--inner {
+  display: block !important;
+
+  .block-editor-block-list__layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 45px;
+    width: 100%;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

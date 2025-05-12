@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/compilations",
+	"version": "0.1.0",
+	"title": "Compilations",
+	"category": "snd-blocks-frontpage",
+	"icon": "products",
+	"example": {},
+	"attributes": {
+		"anchor": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string",
+			"default": "Актуальные подборки"
+		},
+		"link": {
+			"type": "object",
+			"default": {
+				"show": true,
+				"title": "Купить всё",
+				"url": "",
+				"target": false
+			}
+		},
+		"compilations": {
+			"type": "array",
+			"default": [
+				{
+					"title": "Сухость",
+					"link": {
+						"show": true,
+						"title": "Вся подборка",
+						"url": "",
+						"target": false,
+						"preview": {
+							"isVideo": false,
+							"url": "",
+							"id": 0
+						}
+					},
+					"products": []
+				},
+				{
+					"title": "Акне и высыпания",
+					"link": {
+						"show": true,
+						"title": "Вся подборка",
+						"url": "",
+						"target": false,
+						"preview": {
+							"isVideo": false,
+							"url": "",
+							"id": 0
+						}
+					},
+					"products": []
+				},
+				{
+					"title": "Возрастные изменения",
+					"link": {
+						"show": true,
+						"title": "Вся подборка",
+						"url": "",
+						"target": false,
+						"preview": {
+							"isVideo": false,
+							"url": "",
+							"id": 0
+						}
+					},
+					"products": []
+				},
+				{
+					"title": "Чувствительность",
+					"link": {
+						"show": true,
+						"title": "Вся подборка",
+						"url": "",
+						"target": false,
+						"preview": {
+							"isVideo": false,
+							"url": "",
+							"id": 0
+						}
+					},
+					"products": []
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": true,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

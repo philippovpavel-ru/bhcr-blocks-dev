@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "snd/main-button-link",
+	"version": "0.1.0",
+	"title": "Main button link",
+	"category": "snd-blocks-other",
+	"icon": "button",
+	"example": {},
+	"parent": ["snd/main"],
+	"attributes": {
+		"link": {
+			"type": "object",
+			"default": {
+				"title": "Зарегистрироваться",
+				"url": "#",
+				"target": false
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": false,
+		"align": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
