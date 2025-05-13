@@ -129,6 +129,8 @@ export default function Edit( { attributes, setAttributes } ) {
 					<RichText
 						tagName="a"
 						href='#'
+						placeholder="Link Title"
+						style={!link.url ? { opacity: ".5" } : {}}
 						target={ link.target ? '_blank' : '_self' }
 						value={link.title || ''}
 						onChange={(value) => setAttributes({

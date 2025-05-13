@@ -976,6 +976,9 @@ return array(
 			'title' => array(
 				'type' => 'string',
 				'default' => 'Адреса наших Партнёров'
+			),
+			'mapIconUrl' => array(
+				'type' => 'string'
 			)
 		),
 		'supports' => array(

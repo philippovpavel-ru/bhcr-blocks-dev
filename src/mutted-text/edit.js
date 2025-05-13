@@ -12,6 +12,7 @@ export default function Edit({ attributes }) {
 				<RichText
 					tagName="span"
 					value={description || ''}
+					placeholder="Mutted Text"
 					onChange={(value) =>
 						onChangeText('description', value)
 					}

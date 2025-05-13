@@ -382,6 +382,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 					<div className="sd-steps__img-box">
 						<RichText
 							tagName="p"
+							placeholder="Instruction"
 							className="sd-steps__img-text"
 							value={instruction || ''}
 							onChange={(value) =>
@@ -410,6 +411,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 					<div className="sd-steps__text-box">
 						<RichText
 							tagName="h2"
+							placeholder="Title"
 							value={title || ''}
 							onChange={(value) =>
 								onChangeText('title', value)
@@ -418,6 +420,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
 						<RichText
 							tagName="h3"
+							placeholder="Description"
 							value={description || ''}
 							onChange={(value) =>
 								onChangeText('description', value)
@@ -428,6 +431,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 							<RichText
 								tagName="a"
 								href='#'
+								placeholder="Link Title"
+								style={!link.url ? { opacity: ".5" } : {}}
 								target={link.target ? '_blank' : '_self'}
 								value={link.title || ''}
 								onChange={(value) => setAttributes({

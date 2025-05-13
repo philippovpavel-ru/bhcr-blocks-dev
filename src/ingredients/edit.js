@@ -82,6 +82,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<div className="sd-best__header">
 						<RichText
 							tagName="h2"
+							placeholder="Title"
 							value={title || ''}
 							onChange={(value) =>
 								onChangeText('title', value)
@@ -92,6 +93,8 @@ export default function Edit({ attributes, setAttributes }) {
 							<RichText
 								tagName="a"
 								href='#'
+								placeholder="Link Title"
+								style={!link.url ? { opacity: ".5" } : {}}
 								target={link.target ? '_blank' : '_self'}
 								value={link.title || ''}
 								onChange={(value) => setAttributes({
@@ -104,6 +107,7 @@ export default function Edit({ attributes, setAttributes }) {
 						<div className="sd-best__slider-header">
 							<RichText
 								tagName="h3"
+								placeholder="Description"
 								value={description || ''}
 								onChange={(value) =>
 									onChangeText('description', value)

@@ -188,6 +188,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="container">
 					<RichText
 						tagName="h2"
+						placeholder="Title"
 						value={title || ''}
 						onChange={(value) =>
 							onChangeText('title', value)
@@ -198,6 +199,7 @@ export default function Edit({ attributes, setAttributes }) {
 						{type === 'club' && (
 							<RichText
 								tagName="h4"
+								placeholder="List Subtitle"
 								value={listBoxSubtitle || ''}
 								onChange={(value) =>
 									onChangeText('listBoxTitle', value)
@@ -207,6 +209,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 						<RichText
 							tagName="h3"
+							placeholder="List Title"
 							value={listBoxTitle || ''}
 							onChange={(value) =>
 								onChangeText('listBoxTitle', value)
@@ -220,6 +223,7 @@ export default function Edit({ attributes, setAttributes }) {
 										<RichText
 											tagName={type === "default" ? "h4" : "p"}
 											value={item?.title || ''}
+											placeholder="Title"
 											onChange={(value) => onChangeRepeaterItem(
 												index, value, 'title'
 											)}
@@ -228,6 +232,7 @@ export default function Edit({ attributes, setAttributes }) {
 										{type === "default" && (
 											<RichText
 												tagName="p"
+												placeholder="Description"
 												value={item?.description || ''}
 												onChange={(value) => onChangeRepeaterItem(
 													index, value, 'description'

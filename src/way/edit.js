@@ -203,6 +203,7 @@ export default function Edit({ attributes, setAttributes }) {
 			<section {...useBlockProps({ className: 'sd-way' })}>
 				<RichText
 					tagName="h2"
+					placeholder="Title"
 					value={title || ''}
 					onChange={(value) =>
 						onChangeText('title', value)
@@ -217,6 +218,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<div className="sd-way__text">
 						<RichText
 							tagName="h3"
+							placeholder="Description"
 							value={description || ''}
 							onChange={(value) =>
 								onChangeText('description', value)

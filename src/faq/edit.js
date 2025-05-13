@@ -136,6 +136,7 @@ export default function Edit({ attributes, setAttributes }) {
 									tagName="h4"
 									className={`b-protocol__details-button ${(index === activeIndex) && 'active'}`}
 									value={faq_item?.title || ''}
+									placeholder="FAQ Title"
 									onChange={(value) => onChangeRepeaterItem(
 										index, value, 'title'
 									)}
@@ -144,6 +145,7 @@ export default function Edit({ attributes, setAttributes }) {
 								<div className={`b-protocol__details-box ${(index === activeIndex) && 'active'}`}>
 									<RichText
 										tagName="p"
+										placeholder="FAQ Description"
 										value={faq_item?.description || ''}
 										onChange={(value) => onChangeRepeaterItem(
 											index, value, 'description'

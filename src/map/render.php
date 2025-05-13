@@ -1,6 +1,7 @@
 <?php
 $anchor = !empty($attributes['anchor']) ? esc_attr($attributes['anchor']) : '';
 $title = !empty($attributes['title']) ? esc_html($attributes['title']) : '';
+$mapIconUrl = !empty($attributes['mapIconUrl']) ? esc_url($attributes['mapIconUrl']) : '';
 
 $get_terms = get_terms([
 	'taxonomy' => 'bhcr_partners_contries',
@@ -68,7 +69,7 @@ $get_terms = get_terms([
 						</div>
 					</div>
 
-					<ul id="myUL" data-icon="<?php echo esc_url(plugin_dir_url(__FILE__) . 'map.svg'); ?>" data-address-str="<?php echo esc_html__('Address', 'bohicare-core'); ?>" data-site-str="<?php echo esc_html__('Site', 'bohicare-core'); ?>">
+					<ul id="myUL" data-icon="<?php echo $mapIconUrl; ?>" data-address-str="<?php echo esc_html__('Address', 'bohicare-core'); ?>" data-site-str="<?php echo esc_html__('Site', 'bohicare-core'); ?>">
 						<?php
 						$index = 0;
 						foreach ($get_terms as $term_obj) {

@@ -28,6 +28,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="container">
 					<RichText
 						tagName="h2"
+						placeholder="Title"
 						value={title || ''}
 						onChange={(value) =>
 							onChangeText('title', value)
@@ -36,6 +37,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<div className="sd-invite__text">
 						<RichText
 							tagName="h3"
+							placeholder="Subitle"
 							value={subtitle || ''}
 							onChange={(value) =>
 								onChangeText('title', value)
@@ -43,6 +45,7 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 						<RichText
 							tagName="p"
+							placeholder="Description - 01 column"
 							value={description_01 || ''}
 							onChange={(value) =>
 								onChangeText('description_01', value)
@@ -50,6 +53,7 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 						<RichText
 							tagName="p"
+							placeholder="Description - 02 column"
 							value={description_02 || ''}
 							onChange={(value) =>
 								onChangeText('description_02', value)

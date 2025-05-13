@@ -13,6 +13,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				{...useBlockProps({
 					className: 'sd-vacancies__text',
 				})}
+				placeholder="Text"
 				value={text || ''}
 				onChange={(value) => setAttributes({
 					text: value,

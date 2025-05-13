@@ -26,6 +26,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="container">
 					<RichText
 						tagName="h2"
+						placeholder="Title"
 						value={title || ''}
 						onChange={(value) =>
 							onChangeText('title', value)
@@ -34,6 +35,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 					<RichText
 						tagName="h3"
+						placeholder="Description"
 						value={description || ''}
 						onChange={(value) =>
 							onChangeText('description', value)

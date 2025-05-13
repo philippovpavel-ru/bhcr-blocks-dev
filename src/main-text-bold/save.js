@@ -7,7 +7,7 @@ export default function save({ attributes }) {
 		<RichText.Content
 			tagName="p"
 			{...useBlockProps.save({
-				className: 'sd-vacancies__text'
+				className: 'sd-vacancies__text sd-vacancies__text_bold'
 			})}
 			value={text}
 		/>

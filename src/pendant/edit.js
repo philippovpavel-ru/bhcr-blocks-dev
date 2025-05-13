@@ -94,12 +94,14 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText
 						tagName="h2"
 						value={title || ''}
+						placeholder="Title"
 						onChange={(value) =>
 							onChangeText('title', value)
 						}
 					/>
 					<RichText
 						tagName="h3"
+						placeholder="Description"
 						value={description || ''}
 						onChange={(value) =>
 							onChangeText('description', value)

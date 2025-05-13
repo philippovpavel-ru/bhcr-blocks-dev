@@ -16,6 +16,9 @@
     "title": {
       "type": "string",
       "default": "Адреса наших Партнёров"
+    },
+    "mapIconUrl": {
+      "type": "string"
     }
   },
   "supports": {

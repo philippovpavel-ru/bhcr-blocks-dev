@@ -125,6 +125,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText
 						tagName="h2"
 						value={title || ''}
+						placeholder="Title"
 						onChange={(value) =>
 							onChangeText('title', value)
 						}
@@ -133,6 +134,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<RichText
 						tagName="p"
 						value={description || ''}
+						placeholder="Description"
 						onChange={(value) =>
 							onChangeText('description', value)
 						}
@@ -142,6 +144,8 @@ export default function Edit({ attributes, setAttributes }) {
 						<RichText
 							tagName="a"
 							href='#'
+							style={!link.url ? { opacity: ".5" } : {}}
+							placeholder="Link Title"
 							target={link.target ? '_blank' : '_self'}
 							className="sd-club__link"
 							value={link.title || ''}

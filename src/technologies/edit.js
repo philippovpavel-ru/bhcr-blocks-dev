@@ -114,6 +114,7 @@ export default function Edit({ attributes, setAttributes }) {
 			<section {...useBlockProps({ className: 'sd-technologies' })}>
 				<RichText
 					tagName="h2"
+					placeholder="Title"
 					value={title || ''}
 					onChange={(value) =>
 						onChangeText('title', value)
@@ -122,6 +123,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 				<RichText
 					tagName="h3"
+					placeholder="Description"
 					value={description || ''}
 					onChange={(value) =>
 						onChangeText('description', value)
@@ -135,6 +137,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<div className="sd-technologies__text">
 						<RichText
 							tagName="h4"
+							placeholder="Subtitle"
 							value={subtitle || ''}
 							onChange={(value) =>
 								onChangeText('subtitle', value)
@@ -143,6 +146,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 						<RichText
 							tagName="p"
+							placeholder="Text"
 							value={text_technologies || ''}
 							onChange={(value) =>
 								onChangeText('text_technologies', value)

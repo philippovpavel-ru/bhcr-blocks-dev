@@ -103,6 +103,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="sd-ingredients__card-text">
 					<RichText
 						tagName="h4"
+						placeholder="Title"
 						value={title || ''}
 						onChange={(value) =>
 							onChangeText('title', value)
@@ -111,6 +112,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<a></a>
 					<RichText
 						tagName="p"
+						placeholder="Description"
 						value={description || ''}
 						onChange={(value) =>
 							onChangeText('description', value)

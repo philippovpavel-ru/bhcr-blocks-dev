@@ -49,6 +49,8 @@ export default function Edit( { attributes, setAttributes } ) {
 				{...useBlockProps({
 					className: 'sd-404__link',
 				})}
+				style={!link.url ? { opacity: ".5" } : {}}
+				placeholder="Link Title"
 				value={link.title || ''}
 				onChange={(value) => setAttributes({
 					link: { ...link, title: value },

@@ -11,8 +11,9 @@ export default function Edit( { attributes, setAttributes } ) {
 			<RichText
 				tagName="p"
 				{...useBlockProps({
-					className: 'sd-vacancies__text',
+					className: 'sd-vacancies__text sd-vacancies__text_bold',
 				})}
+				placeholder="Text"
 				value={text || ''}
 				onChange={(value) => setAttributes({
 					text: value,
