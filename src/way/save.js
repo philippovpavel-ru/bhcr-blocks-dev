@@ -5,7 +5,7 @@ import {
 import placeholderImage from './way.jpeg';
 
 export default function save({ attributes }) {
-	const { mirror, title, description, stepPrefix, image, steps } = attributes;
+	const { mirror, title, description, stepPrefix, image, steps, isStepsAdvanced } = attributes;
 		const ImageTag = () => (
 			<img
 				src={image?.url || placeholderImage}
@@ -38,12 +38,23 @@ export default function save({ attributes }) {
 
 					{steps && (
 						<ul>
-							{steps?.map((step, index) => (
-								<li key={index}>
-									<span>{`${stepPrefix} ${index + 1}`}</span>
-									{step}
-								</li>
-							))}
+							{steps?.map((step, index) => {
+								const isObj = typeof step === 'object' && step !== null;
+								return (
+									<li key={index}>
+										<span>
+											{(!isStepsAdvanced || !isObj || !step.title)
+												? `${stepPrefix} ${index + 1}`
+												: step.title}
+										</span>
+										{isStepsAdvanced && isObj
+											? step.content
+											: isObj
+												? step.content // если вдруг isStepsAdvanced выключен, но формат уже объект
+												: step}
+									</li>
+								);
+							})}
 						</ul>
 					)}
 				</div>

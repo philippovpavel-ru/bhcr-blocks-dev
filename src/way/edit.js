@@ -14,23 +14,48 @@ import {
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import placeholderImage from './way.jpeg';
 
+// Добавляю функцию нормализации steps
+function normalizeSteps(steps) {
+	return (steps || []).map((step, i) => {
+		if (typeof step === 'string') {
+			return {
+				title: `Шаг ${i + 1}`,
+				content: step,
+			};
+		}
+		return step;
+	});
+}
+
 export default function Edit({ attributes, setAttributes }) {
-	const { mirror, title, description, stepPrefix, image, steps } = attributes;
+	const { mirror, title, description, stepPrefix, image, steps, isStepsAdvanced } = attributes;
+
+	// Нормализуем steps для работы везде как с массивом объектов
+	const normalizedSteps = normalizeSteps(steps);
 
 	const onChangeText = (field, value) => {
 		setAttributes({ [field]: value });
 	};
 
-	const onChangeRepeaterItem = (index, value, field) => {
-		const updatedArray = JSON.parse(JSON.stringify(steps));
-		updatedArray[index] = value;
+	const onChangeRepeaterItem = (index, value) => {
+		const updatedArray = JSON.parse(JSON.stringify(normalizedSteps));
+		updatedArray[index].content = value;
+		setAttributes({ steps: updatedArray });
+	};
+
+	const onChangeRepeaterItemNew = (index, value, field) => {
+		const updatedArray = JSON.parse(JSON.stringify(normalizedSteps));
+		updatedArray[index][field] = value;
 		setAttributes({ steps: updatedArray });
 	};
 
 	const onClickAddRepeaterItem = () => {
-		const newItem = "";
+		const newItem = {
+			title: `Шаг ${normalizedSteps.length + 1}`,
+			content: ""
+		};
 
-		const updatedArray = JSON.parse(JSON.stringify(steps));
+		const updatedArray = JSON.parse(JSON.stringify(normalizedSteps));
 		updatedArray.push(newItem);
 		setAttributes({ steps: updatedArray });
 	};
@@ -38,7 +63,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const onDragEndRepeaterItem = (result) => {
 		if (!result.destination) return;
 
-		const newArray = Array.from(steps);
+		const newArray = Array.from(normalizedSteps);
 		const [movedItem] = newArray.splice(result.source.index, 1);
 		newArray.splice(result.destination.index, 0, movedItem);
 
@@ -46,7 +71,7 @@ export default function Edit({ attributes, setAttributes }) {
 	};
 
 	const onRemoveRepeaterItem = (index) => {
-		const updatedArray = JSON.parse(JSON.stringify(steps));
+		const updatedArray = JSON.parse(JSON.stringify(normalizedSteps));
 		updatedArray.splice(index, 1);
 		setAttributes({ steps: updatedArray });
 	};
@@ -127,74 +152,145 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 
 				<PanelBody title="Steps">
-					<TextControl
-						__nextHasNoMarginBottom={true}
-						label="Step Number Prefix"
-						value={stepPrefix}
-						onChange={(value) =>
-							onChangeText('stepPrefix', value)
-						}
+					<ToggleControl
+						label="Расширенный режим шагов"
+						checked={!!isStepsAdvanced}
+						onChange={() => setAttributes({ isStepsAdvanced: !isStepsAdvanced })}
 					/>
-
 					<hr />
-
-					<DragDropContext onDragEnd={onDragEndRepeaterItem}>
-						<Droppable droppableId="array-list-droppable">
-							{(provided) => (
-								<div
-									{...provided.droppableProps}
-									ref={provided.innerRef}
-									className="array-list-droppable"
-								>
-									{steps?.map((item, index) => (
-										<Draggable
-											key={index}
-											draggableId={`item-${index}`}
-											index={index}
+					{!isStepsAdvanced && (
+						<>
+							<TextControl
+								__nextHasNoMarginBottom={true}
+								label="Step Number Prefix"
+								value={stepPrefix}
+								onChange={(value) =>
+									onChangeText('stepPrefix', value)
+								}
+							/>
+							<hr />
+							<DragDropContext onDragEnd={onDragEndRepeaterItem}>
+								<Droppable droppableId="array-list-droppable">
+									{(provided) => (
+										<div
+											{...provided.droppableProps}
+											ref={provided.innerRef}
+											className="array-list-droppable"
 										>
-											{(provided) => (
-												<details
-													ref={provided.innerRef}
-													{...provided.draggableProps}
-													{...provided.dragHandleProps}
+											{normalizedSteps?.map((item, index) => (
+												<Draggable
+													key={index}
+													draggableId={`item-${index}`}
+													index={index}
 												>
-													<summary>
-														<span>= Itex {index + 1}</span>
-														<Button
-															size="small"
-															variant="secondary"
-															isDestructive={true}
-															title="Remove item"
-															onClick={() => onRemoveRepeaterItem(index)}
-														>x</Button>
-													</summary>
-
-													<div>
-														<TextControl
-															__nextHasNoMarginBottom={true}
-															label="Text"
-															value={item}
-															onChange={(value) => onChangeRepeaterItem(
-																index, value
-															)}
-														/>
-													</div>
-												</details>
-											)}
-										</Draggable>
-									))}
-									{provided.placeholder}
-									<hr />
-									<Button
-										variant="primary"
-										onClick={onClickAddRepeaterItem}
-									>
-										Add
-									</Button>
-								</div>
-							)}
-						</Droppable>
-					</DragDropContext>
+													{(provided) => (
+														<details
+															ref={provided.innerRef}
+															{...provided.draggableProps}
+															{...provided.dragHandleProps}
+														>
+															<summary>
+																<span>= Itex {index + 1}</span>
+																<Button
+																	size="small"
+																	variant="secondary"
+																	isDestructive={true}
+																	title="Remove item"
+																	onClick={() => onRemoveRepeaterItem(index)}
+																>x</Button>
+															</summary>
+															<div>
+																<TextControl
+																	__nextHasNoMarginBottom={true}
+																	label="Text"
+																	value={item.content}
+																	onChange={(value) => onChangeRepeaterItem(index, value)}
+																/>
+															</div>
+														</details>
+													)}
+												</Draggable>
+											))}
+											{provided.placeholder}
+											<hr />
+											<Button
+												variant="primary"
+												onClick={onClickAddRepeaterItem}
+											>
+												Add
+											</Button>
+										</div>
+									)}
+								</Droppable>
+							</DragDropContext>
+						</>
+					)}
+					{isStepsAdvanced && (
+						<>
+							<DragDropContext onDragEnd={onDragEndRepeaterItem}>
+								<Droppable droppableId="array-list-droppable">
+									{(provided) => (
+										<div
+											{...provided.droppableProps}
+											ref={provided.innerRef}
+											className="array-list-droppable"
+										>
+											{normalizedSteps?.map((item, index) => (
+												<Draggable
+													key={index}
+													draggableId={`item-${index}`}
+													index={index}
+												>
+													{(provided) => (
+														<details
+															ref={provided.innerRef}
+															{...provided.draggableProps}
+															{...provided.dragHandleProps}
+														>
+															<summary>
+																<span>= Itex {index + 1}</span>
+																<Button
+																	size="small"
+																	variant="secondary"
+																	isDestructive={true}
+																	title="Remove item"
+																	onClick={() => onRemoveRepeaterItem(index)}
+																>x</Button>
+															</summary>
+															<div>
+																<TextControl
+																	__nextHasNoMarginBottom={true}
+																	label="Title"
+																	value={item.title}
+																	onChange={(value) => onChangeRepeaterItemNew(
+																		index, value, "title"
+																	)}
+																/>
+																<TextControl
+																	__nextHasNoMarginBottom={true}
+																	label="Text"
+																	value={item.content}
+																	onChange={(value) => onChangeRepeaterItemNew(index, value, "content")}
+																/>
+															</div>
+														</details>
+													)}
+												</Draggable>
+											))}
+											{provided.placeholder}
+											<hr />
+											<Button
+												variant="primary"
+												onClick={onClickAddRepeaterItem}
+											>
+												Add
+											</Button>
+										</div>
+									)}
+								</Droppable>
+							</DragDropContext>
+						</>
+					)}
 				</PanelBody>
 			</InspectorControls>
 
@@ -225,16 +321,47 @@ export default function Edit({ attributes, setAttributes }) {
 							}
 						/>
 
-						{steps && (
-							<ul>
-								{steps?.map((step, index) => (
-									<li key={index}>
-										<span>{`${stepPrefix} ${index + 1}`}</span>
-										{step}
-									</li>
-								))}
-							</ul>
-						)}
+						<ul>
+							{normalizedSteps && (
+								<>
+									{normalizedSteps?.map((step, index) => (
+										<li key={index} style={{ position: "relative", paddingRight: "30px" }}>
+											{!isStepsAdvanced && <span>{`${stepPrefix} ${index + 1}`}</span>}
+											{isStepsAdvanced && (
+												<RichText
+													tagName='span'
+													value={step.title}
+													placeholder='Введите заголовок шага'
+												/>
+											)}
+											<RichText
+												tagName='div'
+												value={step.content}
+												placeholder='Введите текст шага'
+											/>
+
+											<Button
+												size="small"
+												variant="secondary"
+												isDestructive={true}
+												style={{position: "absolute", inset: "0", left: "auto", margin: "auto"}}
+												title="Remove item"
+												onClick={() => onRemoveRepeaterItem(index)}
+											>x</Button>
+										</li>
+									))}
+								</>
+							)}
+							<li title="Add">
+								<Button
+									variant="primary"
+									style={{ padding: "0 30px", backgroundColor: "rgb(0, 77, 65)"}}
+									onClick={onClickAddRepeaterItem}
+								>
+									Add
+								</Button>
+							</li>
+						</ul>
 					</div>
 
 					{!mirror && (
